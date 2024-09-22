@@ -12,25 +12,47 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
 
-    void getData() async{
+    void getTime() async{
 
-      final url = Uri.parse('https://jsonplaceholder.typicode.com/todos/1'); //converting the URL to URI object.
+     try{
+         Response response = await get(Uri.parse("http://worldtimeapi.org/api/timezone/Africa/Johannesburg"));
+         if (response.statusCode == 200){
 
-        try {
-          Response res = await get(url); // GET request using URI.
+          Map timeData = jsonDecode(response.body);
+          //print(timeData);
 
-          if (res.statusCode == 200) { //checking if request was successful.
+          String timeDate = timeData['datetime'], offset = timeData['utc_offset'].toString().substring(1,3);// print data
+          // print(timeDate);
+          // print(offset);
 
-              Map data = jsonDecode(res.body); //converting the JSON string into working data.
-              print(data);
-              print(data['title']);
+          DateTime present = DateTime.parse(timeDate);// convert it into a date time objecct.
+          present = present.add(Duration(hours: int.parse(offset)));
+          print(present);
 
-          } else {
-            print('Request failed with status: ${res.statusCode}.'); //checking failed status Code.
-          }
-        } catch (e) {
-          print('Error: $e');
-        }
+         }
+         else{print('Response has failed due to this code: {$response.statusCode}');}
+     }
+     catch (e){
+        print("ERROR: $e");
+     }
+
+      // final url = Uri.parse('https://jsonplaceholder.typicode.com/todos/1'); //converting the URL to URI object.
+
+      //   try {
+      //     Response res = await get(url); // GET request using URI.
+
+      //     if (res.statusCode == 200) { //checking if request was successful.
+
+      //         Map data = jsonDecode(res.body); //converting the JSON string into working data.
+      //         print(data);
+      //         print(data['title']);
+
+      //     } else {
+      //       print('Request failed with status: ${res.statusCode}.'); //checking failed status Code.
+      //     }
+      //   } catch (e) {
+      //     print('Error: $e');
+      //   }
 
 
   }
@@ -38,7 +60,7 @@ class _LoadingState extends State<Loading> {
   @override
   void initState() {
     super.initState();
-    getData();
+    getTime();
   }
 
   @override
