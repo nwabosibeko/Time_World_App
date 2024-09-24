@@ -1,6 +1,7 @@
 import 'package:http/http.dart';
 import 'dart:convert';
 
+
 class WorldTime {
 
   String location = ""; //loaction name for UI
@@ -9,8 +10,10 @@ class WorldTime {
   String flag = ""; // url to asset flag icon
   String url = "";// location url for API endpoint
 
+  WorldTime({required this.location, required this.flag, required this.url});
 
-  void getTime() async{
+
+  Future <void> getTime() async{
 
      try{
          Response response = await get(Uri.parse("http://worldtimeapi.org/api/timezone/$url"));
@@ -23,7 +26,7 @@ class WorldTime {
 
           DateTime present = DateTime.parse(timeDate);// convert it into a date time objecct.
           present = present.add(Duration(hours: int.parse(offset)));
-          
+          time = present.toString(); //set time property
          }
          else{print('Response has failed due to this code: {$response.statusCode}');}
      }
@@ -36,3 +39,4 @@ class WorldTime {
 
 
 }
+
