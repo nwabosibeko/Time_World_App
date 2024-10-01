@@ -8,7 +8,7 @@ class WorldTime {
   String time = ""; //time in location
 
   String flag = ""; // url to asset flag icon
-  String url = "";// location url for API endpoint
+  String url = ""; // location url for API endpoint
 
   WorldTime({required this.location, required this.flag, required this.url});
 
@@ -32,11 +32,13 @@ class WorldTime {
      }
      catch (e){
         print("ERROR: $e");
+
+        time = "Could not retrieve time...";
      }
 
 
   }
 
-
+  
 }
 
