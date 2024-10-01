@@ -17,7 +17,14 @@ class _LoadingState extends State<Loading> {
     WorldTime inst = WorldTime(location: 'Johannesburg', flag: 'flag', url: 'Africa/Johannesburg');
     await inst.getTime(); // wait till response is gotten
 
-    Navigator.pushNamed(context, '/home');
+    Navigator.pushReplacementNamed(context, '/home', arguments: {
+
+        'location': inst.location, 'flag': inst.flag, 'time': inst.time,
+
+    }); //will push loading route and then replace it.
+  
+  
+  
   } 
 
 
