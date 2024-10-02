@@ -1,5 +1,6 @@
 import 'package:http/http.dart';
 import 'dart:convert';
+import 'package:intl/intl.dart';
 
 
 class WorldTime {
@@ -26,7 +27,7 @@ class WorldTime {
 
           DateTime present = DateTime.parse(timeDate);// convert it into a date time objecct.
           present = present.add(Duration(hours: int.parse(offset)));
-          time = present.toString(); //set time property
+          time =  DateFormat.jm().format(present);//set time property
          }
          else{print('Response has failed due to this code: {$response.statusCode}');}
      }
