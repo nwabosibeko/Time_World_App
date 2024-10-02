@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:time_the_world/utility/world_time.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Loading extends StatefulWidget {
   const Loading({super.key});
@@ -38,10 +39,13 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(50.0),
-        child: Text('loading'),
-        ),
+      backgroundColor: const Color.fromARGB(255, 71, 70, 70),
+      body: Center(
+        child: SpinKitRotatingCircle(
+          color: Colors.teal[600],
+          size: 50.0,
+      ),
+      )
     );
   }
 } 
