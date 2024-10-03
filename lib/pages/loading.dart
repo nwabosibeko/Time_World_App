@@ -41,9 +41,9 @@ class _LoadingState extends State<Loading> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 71, 70, 70),
       body: Center(
-        child: SpinKitRotatingCircle(
-          color: Colors.teal[600],
-          size: 50.0,
+        child: SpinKitPulsingGrid(
+          color: const Color.fromARGB(255, 3, 147, 133),
+          size: 80.0,
       ),
       )
     );
