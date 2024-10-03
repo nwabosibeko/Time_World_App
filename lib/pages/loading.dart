@@ -20,7 +20,7 @@ class _LoadingState extends State<Loading> {
 
     Navigator.pushReplacementNamed(context, '/home', arguments: {
 
-        'location': inst.location, 'flag': inst.flag, 'time': inst.time,
+        'location': inst.location, 'flag': inst.flag, 'time': inst.time, 'isDay': inst.dayTime,
 
     }); //will push loading route and then replace it.
   
