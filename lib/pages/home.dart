@@ -17,43 +17,52 @@ class _HomeState extends State<Home> {
     data = ModalRoute.of(context)?.settings.arguments as Map? ?? {};     // Handle null case for ModalRoute and arguments
     print(data);
 
+    String backImage = data['dayTime'] ? 'dayTime.avif' : 'nightTime.webp';
+
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 120, 0, 0),
-          child: Column(
-            children: <Widget>[
-              TextButton.icon(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/location');
-                },
-                icon: Icon(Icons.edit_location),
-                label: Text('Edit Location'),
-              ),
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage('resources/$backImage'),
+            fit: BoxFit.cover
+            )
+          ),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(0, 120, 0, 0),
+            child: Column(
+              children: <Widget>[
+                TextButton.icon(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/location');
+                  },
+                  icon: Icon(Icons.edit_location),
+                  label: Text('Edit Location'),
+                ),
 
-              SizedBox(height: 20.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(data['location'],
+                SizedBox(height: 20.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(data['location'],
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      letterSpacing: 2.0
+                    ),
+                    )
+                  ],
+                ),
+                SizedBox(height: 20.0,),
+                Text(
+                  data['time'],
                   style: TextStyle(
-                    fontSize: 20.0,
-                    letterSpacing: 2.0
+                    fontSize: 66.0
                   ),
-                  )
-                ],
-              ),
-              SizedBox(height: 20.0,),
-              Text(
-                data['time'],
-                style: TextStyle(
-                  fontSize: 66.0
-                ),
-                ),
-            ],
+                  ),
+              ],
+            ),
           ),
         ),
-        ),
-      );
-    }
+      ),
+    );
+  }
 }
