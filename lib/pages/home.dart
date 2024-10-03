@@ -17,7 +17,10 @@ class _HomeState extends State<Home> {
     data = ModalRoute.of(context)?.settings.arguments as Map? ?? {};     // Handle null case for ModalRoute and arguments
     print(data);
 
-    String backImage = data['dayTime'] ? 'dayTime.avif' : 'nightTime.webp';
+    bool isDayTime = data['dayTime'] ?? false;// Handling the null or missing value.
+
+
+    String backImage = isDayTime ? 'dayTime.avif' : 'nightTime.webp';
 
     return Scaffold(
       body: SafeArea(
