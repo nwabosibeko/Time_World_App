@@ -24,9 +24,10 @@ class _SelectLocationState extends State<SelectLocation> {
                             WorldTime(url: 'Asia/Bangkok', location: 'Bangkok', flag: 'Bangkok.png'),
                             WorldTime(url: 'Europe/London', location: 'London', flag: 'london.jpg'),
                             WorldTime(url: 'Europe/Berlin', location: 'Athens', flag: 'Berlin.png'),
-                            WorldTime(url: 'Indian/Mauritius', location: 'Mauritius', flag: 'Maurritius.jpg'),
+                            WorldTime(url: 'Indian/Mauritius', location: 'Mauritius', flag: 'Mauritius.jpg'),
                             WorldTime(url: 'Europe/Paris', location: 'Paris', flag: 'Paris.jpg'),
-                            WorldTime(url: 'Pacific/Tahiti', location: 'Tahiti', flag: 'Tahiti.png'),];
+                            WorldTime(url: 'Pacific/Tahiti', location: 'Tahiti', flag: 'Tahiti.png'),
+                            WorldTime(url: 'Africa/Johannesburg', location: 'Johannesburg', flag: 'South Africa.jpg')];
 
 
   @override
@@ -43,17 +44,22 @@ class _SelectLocationState extends State<SelectLocation> {
       body: ListView.builder(
         itemCount: locate.length,
         itemBuilder: (context, index){
-          return Card(
-            child: ListTile(
-              onTap: () {},
-              title: Text(locate[index].location),
-              leading: CircleAvatar(
-                backgroundImage: AssetImage('resources/${locate[index].flag}'),
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
+            child: Card(
+              child: ListTile(
+                onTap: () {
+                  print(locate[index].location)
+                },
+                title: Text(locate[index].location),
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('resources/${locate[index].flag}'),
+                ),
               ),
             ),
           );
-        },
-        ),
+        }
+      ),
     );
   }
 }
