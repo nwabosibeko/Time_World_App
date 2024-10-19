@@ -29,6 +29,17 @@ class _SelectLocationState extends State<SelectLocation> {
                             WorldTime(url: 'Pacific/Tahiti', location: 'Tahiti', flag: 'Tahiti.png'),
                             WorldTime(url: 'Africa/Johannesburg', location: 'Johannesburg', flag: 'South Africa.jpg')];
 
+  void changeTime(index) async {
+
+    WorldTime ins = locate[index];
+    await ins.getTime();
+    // go to home screen
+    Navigator.pop(context, {
+              'location': ins.location, 'flag': ins.flag, 'time': ins.time, 'isDay': ins.dayTime,
+
+    });
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +60,7 @@ class _SelectLocationState extends State<SelectLocation> {
             child: Card(
               child: ListTile(
                 onTap: () {
-                  print(locate[index].location);
+                  changeTime(index);
                 },
                 title: Text(locate[index].location),
                 leading: CircleAvatar(
