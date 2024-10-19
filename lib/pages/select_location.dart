@@ -12,21 +12,21 @@ class SelectLocation extends StatefulWidget {
 
 class _SelectLocationState extends State<SelectLocation> {
 
-  List<WorldTime> locate = [WorldTime(url: 'Africa/Tunis', location: 'Tunis', flag: ''), 
-                            WorldTime(url: 'Africa/Nigeria', location: 'Nigeria', flag: ''),
-                            WorldTime(url: 'Africa/Nairobi', location: 'Nairobi', flag: ''),
-                            WorldTime(url: 'Africa/Windhoek', location: 'Windhoek', flag: ''),
-                            WorldTime(url: 'America/Detroit', location: 'Detroit', flag: ''),
-                            WorldTime(url: 'America/Los_Angeles', location: 'Los_Angeles', flag: ''),
-                            WorldTime(url: 'America/Mexico_City', location: 'Mexico_City', flag: ''),
-                            WorldTime(url: 'Antarctica/Macquarie', location: 'Macquarie', flag: ''),
-                            WorldTime(url: 'Antarctica/Palmer', location: 'Palmer', flag: ''),
-                            WorldTime(url: 'Asia/Bangkok', location: 'Bangkok', flag: ''),
-                            WorldTime(url: 'Europe/London', location: 'London', flag: ''),
-                            WorldTime(url: 'Europe/Berlin', location: 'Athens', flag: ''),
-                            WorldTime(url: 'Indian/Mauritius', location: 'Mauritius', flag: ''),
-                            WorldTime(url: 'Europe/Paris', location: 'Paris', flag: ''),
-                            WorldTime(url: 'Pacific/Tahiti', location: 'Tahiti', flag: ''),];
+  List<WorldTime> locate = [WorldTime(url: 'Africa/Tunis', location: 'Tunis', flag: 'Tunis.png'), 
+                            WorldTime(url: 'Africa/Nigeria', location: 'Nigeria', flag: 'Nigeria.webp'),
+                            WorldTime(url: 'Africa/Nairobi', location: 'Nairobi', flag: 'nairobi.webp'),
+                            WorldTime(url: 'Africa/Windhoek', location: 'Windhoek', flag: 'windoek.jpg'),
+                            WorldTime(url: 'America/Detroit', location: 'Detroit', flag: 'detroit.gif'),
+                            WorldTime(url: 'America/Los_Angeles', location: 'Los_Angeles', flag: 'Los Angeles.png'),
+                            WorldTime(url: 'America/Mexico_City', location: 'Mexico_City', flag: 'Mexico.webp'),
+                            WorldTime(url: 'Antarctica/Macquarie', location: 'Macquarie', flag: 'antarctica.webp'),
+                            WorldTime(url: 'Antarctica/Palmer', location: 'Palmer', flag: 'palmer.jpg'),
+                            WorldTime(url: 'Asia/Bangkok', location: 'Bangkok', flag: 'Bangkok.png'),
+                            WorldTime(url: 'Europe/London', location: 'London', flag: 'london.jpg'),
+                            WorldTime(url: 'Europe/Berlin', location: 'Athens', flag: 'Berlin.png'),
+                            WorldTime(url: 'Indian/Mauritius', location: 'Mauritius', flag: 'Maurritius.jpg'),
+                            WorldTime(url: 'Europe/Paris', location: 'Paris', flag: 'Paris.jpg'),
+                            WorldTime(url: 'Pacific/Tahiti', location: 'Tahiti', flag: 'Tahiti.png'),];
 
 
   @override
@@ -47,6 +47,9 @@ class _SelectLocationState extends State<SelectLocation> {
             child: ListTile(
               onTap: () {},
               title: Text(locate[index].location),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage('resources/${locate[index].flag}'),
+              ),
             ),
           );
         },
