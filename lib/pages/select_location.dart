@@ -22,12 +22,11 @@ class _SelectLocationState extends State<SelectLocation> {
                             WorldTime(url: 'Antarctica/Macquarie', location: 'Macquarie', flag: ''),
                             WorldTime(url: 'Antarctica/Palmer', location: 'Palmer', flag: ''),
                             WorldTime(url: 'Asia/Bangkok', location: 'Bangkok', flag: ''),
-                            WorldTime(url: '', location: '', flag: ''),
-                            WorldTime(url: '', location: '', flag: ''),
-                            WorldTime(url: '', location: '', flag: ''),
-                            WorldTime(url: '', location: '', flag: ''),
-                            WorldTime(url: '', location: '', flag: ''),
-                            WorldTime(url: '', location: '', flag: ''),];
+                            WorldTime(url: 'Europe/London', location: 'London', flag: ''),
+                            WorldTime(url: 'Europe/Berlin', location: 'Athens', flag: ''),
+                            WorldTime(url: 'Indian/Mauritius', location: 'Mauritius', flag: ''),
+                            WorldTime(url: 'Europe/Paris', location: 'Paris', flag: ''),
+                            WorldTime(url: 'Pacific/Tahiti', location: 'Tahiti', flag: ''),];
 
 
   @override
@@ -41,6 +40,12 @@ class _SelectLocationState extends State<SelectLocation> {
         centerTitle: true,
         elevation: 0,
       ),
+      // body: ListView.builder(
+      //   itemCount: locate.length,
+      //   itemBuilder: (context, index){
+
+      //   },
+      //   ),
     );
   }
 }
