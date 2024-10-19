@@ -49,7 +49,7 @@ class _SelectLocationState extends State<SelectLocation> {
             child: Card(
               child: ListTile(
                 onTap: () {
-                  print(locate[index].location)
+                  print(locate[index].location);
                 },
                 title: Text(locate[index].location),
                 leading: CircleAvatar(
