@@ -40,12 +40,17 @@ class _SelectLocationState extends State<SelectLocation> {
         centerTitle: true,
         elevation: 0,
       ),
-      // body: ListView.builder(
-      //   itemCount: locate.length,
-      //   itemBuilder: (context, index){
-
-      //   },
-      //   ),
+      body: ListView.builder(
+        itemCount: locate.length,
+        itemBuilder: (context, index){
+          return Card(
+            child: ListTile(
+              onTap: () {},
+              title: Text(locate[index].location),
+            ),
+          );
+        },
+        ),
     );
   }
 }
