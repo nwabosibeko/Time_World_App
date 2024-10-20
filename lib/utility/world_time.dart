@@ -28,7 +28,7 @@ class WorldTime {
           DateTime present = DateTime.parse(timeDate);// convert it into a date time objecct.
           present = present.add(Duration(hours: int.parse(offset)));
 
-          dayTime = present.hour > 6 && present.hour < 18 ? true : false; //
+          dayTime = present.hour > 6 && present.hour < 18 ? true : false;
           time =  DateFormat.jm().format(present);//set time property
          }
          else{print('Response has failed due to this code: {$response.statusCode}');}
