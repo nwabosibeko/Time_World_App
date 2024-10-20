@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
     data = data.isNotEmpty ? data : ModalRoute.of(context)?.settings.arguments as Map? ?? {};     // Handle null case for ModalRoute and arguments
     print(data);
 
-    String backImage = data['isDay'] ? 'dayTime.avif' : 'nightTime.webp';
+    String backImage = data['isDay'] ? 'ai_dayPic.avif' : 'nightTime.webp';
 
     return Scaffold(
       body: SafeArea(
@@ -45,6 +45,9 @@ class _HomeState extends State<Home> {
                   },
                   icon: Icon(Icons.edit_location),
                   label: Text('Edit Location'),
+                  style: TextButton.styleFrom(
+                  foregroundColor: const Color.fromARGB(255, 16, 1, 47), // Change the color to whatever you want
+                  ),
                 ),
 
                 SizedBox(height: 20.0),
