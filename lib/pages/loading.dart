@@ -44,17 +44,17 @@ class _LoadingState extends State<Loading> {
                 fontWeight: FontWeight.bold, 
               ),
             ),
-            const SizedBox(height: 20.0),  // Space between the title and the logo
+            const SizedBox(height: 30.0),  // Space between the title and the logo
             ClipOval(
               child: Image.asset(
                 'resources/earth_logo.png', 
-                width: 100.0, 
-                height: 100.0,
+                width: 200.0, 
+                height: 200.0,
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(height: 20.0),  // Space between the logo and the spinner
-            SpinKitPulsingGrid(
+            const SizedBox(height: 60.0),  // Space between the logo and the spinner
+            SpinKitSpinningLines(
               color: const Color(0xFF494A4A),
               size: 80.0,
             ),
