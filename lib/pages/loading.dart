@@ -5,30 +5,22 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 class Loading extends StatefulWidget {
   const Loading({super.key});
 
-
   @override
   _LoadingState createState() => _LoadingState();
 }
 
 class _LoadingState extends State<Loading> {
-
-
   void configWorldTime() async {
-
     WorldTime inst = WorldTime(location: 'Johannesburg', flag: 'flag', url: 'Africa/Johannesburg');
     await inst.getTime(); // wait till response is gotten
 
     Navigator.pushReplacementNamed(context, '/home', arguments: {
-
-        'location': inst.location, 'flag': inst.flag, 'time': inst.time, 'isDay': inst.dayTime,
-
+      'location': inst.location,
+      'flag': inst.flag,
+      'time': inst.time,
+      'isDay': inst.dayTime,
     }); //will push loading route and then replace it.
-  
-  
-  
-  } 
-
-
+  }
 
   @override
   void initState() {
@@ -41,11 +33,34 @@ class _LoadingState extends State<Loading> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 0, 0, 0),
       body: Center(
-        child: SpinKitPulsingGrid(
-          color: const Color(0xFF494A4A),
-          size: 80.0,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Time The World',
+              style: TextStyle(
+                fontSize: 40.0, 
+                color: Colors.white,  
+                fontWeight: FontWeight.bold, 
+              ),
+            ),
+            const SizedBox(height: 20.0),  // Space between the title and the logo
+            ClipOval(
+              child: Image.asset(
+                'resources/earth_logo.png', 
+                width: 100.0, 
+                height: 100.0,
+                fit: BoxFit.cover,
+              ),
+            ),
+            const SizedBox(height: 20.0),  // Space between the logo and the spinner
+            SpinKitPulsingGrid(
+              color: const Color(0xFF494A4A),
+              size: 80.0,
+            ),
+          ],
+        ),
       ),
-      )
     );
   }
-} 
+}
