@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
                   icon: Icon(Icons.edit_location),
                   label: Text('Edit Location'),
                   style: TextButton.styleFrom(
-                  foregroundColor: const Color.fromARGB(255, 16, 1, 47), // Change the color to whatever you want
+                  foregroundColor: const Color.fromARGB(255, 16, 1, 47), 
                   ),
                 ),
 
