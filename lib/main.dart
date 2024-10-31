@@ -5,7 +5,8 @@ import 'package:time_the_world/pages/loading.dart';
 
 
 void main() =>
-  runApp(MaterialApp(
+  runApp(
+    MaterialApp(
     initialRoute: '/',
      routes: {
       '/': (context) => Loading(),
