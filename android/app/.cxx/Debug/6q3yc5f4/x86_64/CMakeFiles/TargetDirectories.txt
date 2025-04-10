@@ -1,0 +1,2 @@
+/home/lonwabo-sibeko/Documents/Github_Projects/Time_World_App/android/app/.cxx/Debug/6q3yc5f4/x86_64/CMakeFiles/edit_cache.dir
+/home/lonwabo-sibeko/Documents/Github_Projects/Time_World_App/android/app/.cxx/Debug/6q3yc5f4/x86_64/CMakeFiles/rebuild_cache.dir
