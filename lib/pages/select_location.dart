@@ -43,10 +43,10 @@ class _SelectLocationState extends State<SelectLocation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 197, 196, 196),
+      backgroundColor: const Color.fromARGB(255, 197, 196, 196),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 15, 15, 15),
-        title: Text(
+        backgroundColor: const Color.fromARGB(255, 15, 15, 15),
+        title: const Text(
           'Choose a Location',
           style: TextStyle(color: Colors.white), 
         ),
@@ -66,7 +66,7 @@ class _SelectLocationState extends State<SelectLocation> {
                 },
                 title: Text(
                   locate[index].location,
-                  style: TextStyle(color: Colors.white), 
+                  style: const TextStyle(color: Colors.white), 
                 ),
                 leading: CircleAvatar(
                   backgroundImage: AssetImage('resources/${locate[index].flag}'),

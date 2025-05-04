@@ -36,7 +36,7 @@ class _LoadingState extends State<Loading> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Time The World',
               style: TextStyle(
                 fontSize: 40.0, 
@@ -54,8 +54,8 @@ class _LoadingState extends State<Loading> {
               ),
             ),
             const SizedBox(height: 60.0),  // Space between the logo and the spinner
-            SpinKitSpinningLines(
-              color: const Color(0xFF494A4A),
+            const SpinKitSpinningLines(
+              color: Color(0xFF494A4A),
               size: 80.0,
             ),
           ],

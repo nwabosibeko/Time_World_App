@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
 
     data = data.isNotEmpty ? data : ModalRoute.of(context)?.settings.arguments as Map? ?? {};     // Handle null case for ModalRoute and arguments
-    print(data);
+    //print(data);
 
     String backImage = data['isDay'] ? 'ai_dayPic.avif' : 'nightTime.webp';
 
@@ -43,29 +43,29 @@ class _HomeState extends State<Home> {
                       };
                       });
                   },
-                  icon: Icon(Icons.edit_location),
-                  label: Text('Edit Location'),
+                  icon: const Icon(Icons.edit_location),
+                  label: const Text('Edit Location'),
                   style: TextButton.styleFrom(
                   foregroundColor: const Color.fromARGB(255, 16, 1, 47), 
                   ),
                 ),
 
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(data['location'],
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20.0,
                       letterSpacing: 2.0
                     ),
                     )
                   ],
                 ),
-                SizedBox(height: 20.0,),
+                const SizedBox(height: 20.0,),
                 Text(
                   data['time'],
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 66.0
                   ),
                   ),

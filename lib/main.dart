@@ -9,9 +9,9 @@ void main() =>
     MaterialApp(
     initialRoute: '/',
      routes: {
-      '/': (context) => Loading(),
-      '/home': (context) => Home(),
-      '/location': (context) => SelectLocation(),
+      '/': (context) => const Loading(),
+      '/home': (context) => const Home(),
+      '/location': (context) => const SelectLocation(),
 
      },
      
